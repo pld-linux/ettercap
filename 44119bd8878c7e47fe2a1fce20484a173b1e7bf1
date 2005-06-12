@@ -1,0 +1,5 @@
+- Added plugin_dir patch --- plugins moved to %{_libdir}. They are binary
+  files (*.so) and AFAIK should not be in %{_datadir}.
+- Removed not needed ,,\'' from %build section.
+- Corrected %files section --- ettercap now owns %{_libdir}/%{name}
+  directory.
