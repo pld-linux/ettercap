@@ -3,8 +3,8 @@
 %bcond_without	gtk		# build without gtk-based frontend (fewer dependencies)
 #
 Summary:	ettercap - a ncurses-based sniffer/interceptor utility
-Summary(pl.UTF-8):   ettercap - oparte o ncurses narzędzie do sniffowania/przechwytywania
-Summary(pt_BR.UTF-8):   ettercap e um interceptador/sniffer paseado em ncurses
+Summary(pl.UTF-8):	ettercap - oparte o ncurses narzędzie do sniffowania/przechwytywania
+Summary(pt_BR.UTF-8):	ettercap e um interceptador/sniffer paseado em ncurses
 Name:		ettercap
 Version:	0.7.3
 Release:	1
