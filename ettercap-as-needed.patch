@@ -1,0 +1,11 @@
+--- ettercap-NG-0.7.3/src/Makefile.in.org	2007-06-07 16:53:42.233479618 +0000
++++ ettercap-NG-0.7.3/src/Makefile.in	2005-05-27 15:11:54.000000000 +0000
+@@ -640,7 +640,7 @@
+ 	done
+ ettercap$(EXEEXT): $(ettercap_OBJECTS) $(ettercap_DEPENDENCIES) 
+ 	@rm -f ettercap$(EXEEXT)
+-	$(LINK) $(ettercap_LDFLAGS) $(ettercap_OBJECTS) $(ettercap_LDADD) $(LIBS)
++	$(LINK)  $(ettercap_OBJECTS) $(ettercap_LDADD) $(LIBS) $(ettercap_LDFLAGS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
