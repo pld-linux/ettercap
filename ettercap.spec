@@ -16,6 +16,7 @@ Source0:	http://dl.sourceforge.net/ettercap/%{name}-NG-%{version}.tar.gz
 Patch1:		%{name}-ncurses.patch
 Patch2:		%{name}-plugin_dir.patch
 Patch3:		%{name}-kernel_version.patch
+Patch4:		%{name}-as-needed.patch
 URL:		http://ettercap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -78,7 +79,7 @@ hosts na rede local, portas abertas, versão de serviços, tipo de host
 %setup -q -n %{name}-NG-%{version}
 #%patch1 -p0
 #%patch2 -p1
-#%patch3 -p1
+%patch4 -p1
 
 %build
 #cp -f /usr/share/automake/config.sub .
