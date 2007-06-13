@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	ettercap - oparte o ncurses narzędzie do sniffowania/przechw
 Summary(pt_BR.UTF-8):	ettercap e um interceptador/sniffer paseado em ncurses
 Name:		ettercap
 Version:	0.7.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
@@ -21,11 +21,11 @@ URL:		http://ettercap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 %{?with_gtk:BuildRequires:	gtk+2-devel}
+BuildRequires:	libltdl-devel
+BuildRequires:	libnet-devel >= 1.1.2.1
+BuildRequires:	libpcap-devel
 BuildRequires:	ncurses-ext-devel
 BuildRequires:	openssl-devel >= 0.9.7d
-BuildRequires:	libnet-devel >= 1.1.2.1
-BuildRequires:	libltdl-devel
-BuildRequires:	libpcap-devel
 BuildRequires:	pcre-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -91,7 +91,7 @@ CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 	--%{!?debug:dis}%{?debug:en}able-debug \
 	--%{?with_gtk:en}%{!?with_gtk:dis}able-gtk \
 	--enable-plugins \
-	--enable-https 
+	--enable-https
 %{__make}
 
 %install
@@ -108,7 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc README CHANGELOG AUTHORS TODO doc/*
 %doc THANKS README.BUGS
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/ettercap
+%dir %{_libdir}/ettercap
+%attr(755,root,root) %{_libdir}/ettercap/*.so
+%{_libdir}/ettercap/*.la
 %{_datadir}/ettercap
 %{_mandir}/man8/*
 %{_mandir}/man5/*
