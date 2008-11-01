@@ -1,0 +1,11 @@
+--- ec/src/ec_log.c~	2004-09-30 18:01:45.000000000 +0200
++++ ec/src/ec_log.c	2008-11-01 14:43:25.354519564 +0100
+@@ -190,7 +190,7 @@
+       if (fd->cfd == NULL)
+          SEMIFATAL_ERROR("%s", gzerror(fd->cfd, &zerr));
+    } else {
+-      fd->fd = open(filename, O_CREAT | O_TRUNC | O_RDWR | O_BINARY);
++      fd->fd = open(filename, O_CREAT | O_TRUNC | O_RDWR | O_BINARY, 0644);
+       if (fd->fd == -1)
+          SEMIFATAL_ERROR("Can't create %s: %s", filename, strerror(errno));
+    }
