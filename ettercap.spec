@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	ettercap - oparte o ncurses narzędzie do sniffowania/przechw
 Summary(pt_BR.UTF-8):	ettercap e um interceptador/sniffer paseado em ncurses
 Name:		ettercap
 Version:	0.7.3
-Release:	7
+Release:	8
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
