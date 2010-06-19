@@ -7,17 +7,18 @@ Summary(pl.UTF-8):	ettercap - oparte o ncurses narzędzie do sniffowania/przechw
 Summary(pt_BR.UTF-8):	ettercap e um interceptador/sniffer paseado em ncurses
 Name:		ettercap
 Version:	0.7.3
-Release:	9
+Release:	10
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
-Source0:	http://dl.sourceforge.net/ettercap/%{name}-NG-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/ettercap/%{name}-NG-%{version}.tar.gz
 # Source0-md5:	28fb15cd024162c55249888fe1b97820
-Patch1:		%{name}-ncurses.patch
-Patch2:		%{name}-plugin_dir.patch
-Patch3:		%{name}-kernel_version.patch
-Patch4:		%{name}-as-needed.patch
-Patch5:		%{name}-build.patch
+Patch1:		%{name}-build.patch
+Patch2:		%{name}-as-needed.patch
+Patch3:		%{name}-ncurses.patch
+Patch4:		%{name}-libmissing.patch
+Patch5:		%{name}-shlib_ext.patch
+Patch6:		%{name}-flags.patch
 URL:		http://ettercap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,6 +26,7 @@ BuildRequires:	automake
 BuildRequires:	libltdl-devel
 BuildRequires:	libnet-devel >= 1.1.2.1
 BuildRequires:	libpcap-devel
+BuildRequires:	libtool
 BuildRequires:	ncurses-ext-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	pcre-devel
@@ -79,17 +81,19 @@ hosts na rede local, portas abertas, versão de serviços, tipo de host
 
 %prep
 %setup -q -n %{name}-NG-%{version}
-#%patch1 -p0
-#%patch2 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
-#cp -f /usr/share/automake/config.sub .
-#%{__aclocal}
-#%{__autoconf}
-#%{__autoheader}
-CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--%{!?debug:dis}%{?debug:en}able-debug \
 	--%{?with_gtk:en}%{!?with_gtk:dis}able-gtk \
