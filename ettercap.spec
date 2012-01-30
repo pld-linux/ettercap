@@ -15,10 +15,9 @@ Source0:	http://downloads.sourceforge.net/ettercap/%{name}-NG-%{version}.tar.gz
 # Source0-md5:	28fb15cd024162c55249888fe1b97820
 Patch1:		%{name}-build.patch
 Patch2:		%{name}-as-needed.patch
-Patch3:		%{name}-ncurses.patch
-Patch4:		%{name}-libmissing.patch
-Patch5:		%{name}-shlib_ext.patch
-Patch6:		%{name}-flags.patch
+Patch3:		%{name}-libmissing.patch
+Patch4:		%{name}-shlib_ext.patch
+Patch5:		%{name}-flags.patch
 URL:		http://ettercap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -86,7 +85,6 @@ hosts na rede local, portas abertas, versão de serviços, tipo de host
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
-%patch6 -p1
 
 %build
 %{__libtoolize}
