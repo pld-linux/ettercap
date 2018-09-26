@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	ettercap - oparte o ncurses narzędzie do sniffowania/przechw
 Summary(pt_BR.UTF-8):	ettercap e um interceptador/sniffer paseado em ncurses
 Name:		ettercap
 Version:	0.7.3
-Release:	17
+Release:	18
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
@@ -18,6 +18,7 @@ Patch2:		%{name}-as-needed.patch
 Patch3:		%{name}-libmissing.patch
 Patch4:		%{name}-shlib_ext.patch
 Patch5:		%{name}-flags.patch
+Patch6:		openssl.patch
 URL:		http://ettercap.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -85,6 +86,7 @@ hosts na rede local, portas abertas, versão de serviços, tipo de host
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 %{__libtoolize}
