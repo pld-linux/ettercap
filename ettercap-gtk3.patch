@@ -1,0 +1,20 @@
+--- ettercap-0.8.3/cmake/Modules/FindGTK3.cmake.orig	2019-06-28 01:19:16.000000000 +0200
++++ ettercap-0.8.3/cmake/Modules/FindGTK3.cmake	2020-05-23 19:35:27.043077345 +0200
+@@ -126,6 +126,7 @@
+     giomm-2.4
+     gtk-3.0
+     gtkmm-2.4
++    harfbuzz
+     libglade-2.0
+     libglademm-2.4
+     pango-1.0
+@@ -425,6 +426,9 @@
+ 
+     _gtk3_find_include_dir(GTK3_FONTCONFIG_INCLUDE_DIR fontconfig/fontconfig.h)
+ 
++    _gtk3_find_include_dir(GTK3_HARFBUZZ_INCLUDE_DIR hb.h)
++    _gtk3_find_library(GTK3_HARFBUZZ_LIBRARY harfbuzz false false)
++
+     _gtk3_find_include_dir(GTK3_PANGO_INCLUDE_DIR pango/pango.h)
+     _gtk3_find_library(GTK3_PANGO_LIBRARY pango false true)
+ 
