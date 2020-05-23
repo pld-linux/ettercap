@@ -20,6 +20,7 @@ Source0:	https://github.com/Ettercap/ettercap/releases/download/v%{version}/%{na
 Patch0:		%{name}-buildtype.patch
 Patch1:		%{name}-gtk3.patch
 Patch2:		%{name}-link.patch
+Patch3:		%{name}-no-common.patch
 URL:		https://www.ettercap-project.org/
 %{?with_geoip:BuildRequires:	GeoIP-devel}
 BuildRequires:	bison
@@ -98,6 +99,7 @@ hosts na rede local, portas abertas, versão de serviços, tipo de host
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 install -d build
