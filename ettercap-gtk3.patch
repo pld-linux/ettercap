@@ -8,6 +8,14 @@
      libglade-2.0
      libglademm-2.4
      pango-1.0
+@@ -147,6 +147,7 @@
+ 
+   find_path(${_var} ${_hdr}
+     PATHS
++      /usr/lib${LIB_SUFFIX}
+       /usr/local/lib64
+       /usr/local/lib
+       # fix for Ubuntu == 11.04 (Natty Narwhal)
 @@ -425,6 +426,9 @@
  
      _gtk3_find_include_dir(GTK3_FONTCONFIG_INCLUDE_DIR fontconfig/fontconfig.h)
